@@ -1,8 +1,8 @@
 <h2>Programming Books List...</h2>
 
 <button (click)="isShowing = !isShowing">
-    <span *ngIf="!isShowing">Show Books</span>
-    <span *ngIf="isShowing">Hide Books</span>
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
 </button>
 <input type="text" [(ngModel)]="myName" />
 <div> {{ myName }} </div>
