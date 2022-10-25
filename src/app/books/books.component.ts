@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Book {
-  name: string,
-  author: string,
-  image: string,
-}
+import { Book } from '../types/Book';
+import { BooksService } from './books.service';
 
 @Component({
   selector: 'app-books',
@@ -13,18 +9,7 @@ interface Book {
 })
 export class BooksComponent implements OnInit {
 
-  books: Book[] = [
-    {
-      name: 'Clean Code',
-      author: 'Robert C Martin',
-      image: "https://m.media-amazon.com/images/I/51csugYPrJL._SX331_BO1,204,203,200_.jpg",
-    },
-    {
-      name: 'Pragmatic Programmer',
-      author: 'David Thomas',
-      image: "https://m.media-amazon.com/images/I/91T0FcC2t-L._AC_UL640_FMwebp_QL65_.jpg",
-    }
-  ]
+  books: Book[] = [];
 
   
     myName: string = '';
@@ -39,9 +24,10 @@ export class BooksComponent implements OnInit {
   //   this.isDisabled = true;
   // }
 
-  constructor() { }
+  constructor(private bookService: BooksService) {}
 
   ngOnInit(): void {
+    this.books = this.bookService.getBooks();
   }
 
 }
