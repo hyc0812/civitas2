@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Book {
+  name: string,
+  author: string,
+  image: string,
+}
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -7,16 +13,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  books = [
+  books: Book[] = [
     {
       name: 'Clean Code',
       author: 'Robert C Martin',
-      src: "https://m.media-amazon.com/images/I/51csugYPrJL._SX331_BO1,204,203,200_.jpg",
+      image: "https://m.media-amazon.com/images/I/51csugYPrJL._SX331_BO1,204,203,200_.jpg",
     },
     {
-      name2: 'Pragmatic Programmer',
-      author2: 'David Thomas',
-      src2: "https://m.media-amazon.com/images/I/91T0FcC2t-L._AC_UL640_FMwebp_QL65_.jpg",
+      name: 'Pragmatic Programmer',
+      author: 'David Thomas',
+      image: "https://m.media-amazon.com/images/I/91T0FcC2t-L._AC_UL640_FMwebp_QL65_.jpg",
     }
   ]
 
