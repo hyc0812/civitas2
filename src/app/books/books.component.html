@@ -1,0 +1,20 @@
+<h2>Programming Books List...</h2>
+
+<button (click)="isShowing = !isShowing">
+    <span *ngIf="!isShowing">Show Books</span>
+    <span *ngIf="isShowing">Hide Books</span>
+</button>
+<input type="text" [(ngModel)]="myName" />
+<div> {{ myName }} </div>
+
+<ul *ngIf="isShowing">
+    <li>
+        <img [src]="src" [alt]="name" width="100" />
+         {{ name }} by {{ author }} 
+    </li>
+
+    <li>
+        <img [src]="src2" [alt]="name2" width="100" />
+         {{ name2 }} by {{ author2 }} 
+    </li>
+</ul>
