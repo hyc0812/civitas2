@@ -7,8 +7,8 @@
 <!-- <input type="text" [(ngModel)]="myName" />
 <div> {{ myName }} </div> -->
 
-<ul *ngIf="isShowing">
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center">
     <ng-container *ngFor="let singlebook of books; let i = index">
-        <app-book [book]="singlebook"></app-book>
+        <app-book [book]="singlebook" class="w-1/2 p-5 text-center"></app-book>
     </ng-container>
 </ul>
