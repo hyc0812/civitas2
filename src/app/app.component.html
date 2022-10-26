@@ -5,12 +5,20 @@
 
 <nav class="flex justify-between p-5 bg-purple-900 text-white" >
     <div>
-        <a routerLink="/">Book Shop</a>
+        <a routerLink="/"> Civitas U of S</a>
     </div>
     <div>
-        <a class="mx-4" routerLink="/cart">My Cart</a>
-        <a class="mx-4" routerLink="/login">Login</a>
-        <a class="mx-4" routerLink="/register">Register</a>
+        <a class="mx-4" routerLink="/cart">My DeshBoard</a>
+        <ng-container *ngIf="!isAuthenticated()">
+            <a class="mx-4" routerLink="/login">Login</a>
+            <a class="mx-4" routerLink="/register">Register</a>
+        </ng-container>
+
+        <ng-container *ngIf="isAuthenticated()">
+            <button (click)="logout()" class="mx-4">Logout</button>
+        </ng-container>
+
+
     </div>
 </nav>
 
